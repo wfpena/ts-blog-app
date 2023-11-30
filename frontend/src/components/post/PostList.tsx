@@ -33,7 +33,6 @@ function PostsList() {
 				try {
 					await deleteEntity('posts', postId);
 					setPosts(posts.filter((p) => p.id !== postId));
-					toast.success('Post deleted');
 				} catch (err) {
 					toast.error(`Error deleting post. ${err.message}`);
 				}

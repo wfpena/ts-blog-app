@@ -52,7 +52,7 @@ yarn start
 1. Install dependencies.
 
 ```
-cd backend
+cd frontend
 yarn install
 ```
 
@@ -96,6 +96,21 @@ Comment {
 }
 ```
 
+### Buid Frontend
+
+You can use the command `yarn build` on the ``./frontend`` folder to make a production build.
+
+It will generate a `./build` folder with the build.
+
+To test it you can use `serve` (or any other http static file serving system) or an actual server.
+
+To test locally you can run:
+
+```
+npm install -g serve
+serve -s ./build
+```
+
 ### Running Tests
 
 For both frontend and backed run `yarn test`.
@@ -105,6 +120,7 @@ For both frontend and backed run `yarn test`.
 ## TODO
 
 * Pagination / Infinite scrolling when fetching posts
+* Live Demo and mock data on frontend
 * Unit tests
 * Improve styles
 * Code refactoring (specially frontend)

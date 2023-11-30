@@ -106,141 +106,7 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
-		"/comments": {
-			"post": {
-				"operationId": "CommentsController.addComment",
-				"requestBody": {
-					"content": {
-						"application/json": {
-							"schema": {
-								"$ref": "#/components/schemas/CommentInput"
-							}
-						}
-					},
-					"description": "",
-					"required": false
-				},
-				"responses": {
-					"200": {
-						"content": {
-							"application/json": {
-								"schema": {
-									"type": "object",
-									"properties": {
-										"status": {
-											"type": "string",
-											"example": "200"
-										},
-										"data": {
-											"type": "object",
-											"$ref": "#/components/schemas/Comment"
-										}
-									}
-								}
-							}
-						},
-						"description": "Successful response"
-					}
-				},
-				"summary": "Add comment",
-				"tags": [
-					"Comments"
-				]
-			}
-		},
-		"/comments/{commentId}": {
-			"delete": {
-				"operationId": "CommentsController.deleteComment",
-				"parameters": [
-					{
-						"in": "path",
-						"name": "commentId",
-						"required": true,
-						"schema": {
-							"pattern": "[^\\/#\\?]+?",
-							"type": "string"
-						}
-					}
-				],
-				"responses": {
-					"200": {
-						"content": {
-							"application/json": {
-								"schema": {
-									"properties": {
-										"status": {
-											"type": "number",
-											"example": 200
-										},
-										"data": {
-											"type": "string",
-											"example": "fb26a1a5-8a51-4518-a56e-1e38540379d6"
-										}
-									}
-								}
-							}
-						},
-						"description": "Successful response"
-					}
-				},
-				"summary": "Delete comment",
-				"tags": [
-					"Comments"
-				]
-			},
-			"put": {
-				"operationId": "CommentsController.updateComment",
-				"parameters": [
-					{
-						"in": "path",
-						"name": "commentId",
-						"required": true,
-						"schema": {
-							"pattern": "[^\\/#\\?]+?",
-							"type": "string"
-						}
-					}
-				],
-				"requestBody": {
-					"content": {
-						"application/json": {
-							"schema": {
-								"$ref": "#/components/schemas/CommentInput"
-							}
-						}
-					},
-					"description": "",
-					"required": false
-				},
-				"responses": {
-					"200": {
-						"content": {
-							"application/json": {
-								"schema": {
-									"type": "object",
-									"properties": {
-										"status": {
-											"type": "number",
-											"example": 200
-										},
-										"data": {
-											"type": "object",
-											"$ref": "#/components/schemas/Comment"
-										}
-									}
-								}
-							}
-						},
-						"description": "Successful response"
-					}
-				},
-				"summary": "Update comment",
-				"tags": [
-					"Comments"
-				]
-			}
-		},
-		"/posts": {
+		"/api/v1/posts": {
 			"get": {
 				"operationId": "PostsController.getAll",
 				"responses": {
@@ -311,7 +177,7 @@
 				]
 			}
 		},
-		"/posts/{postId}": {
+		"/api/v1/posts/{postId}": {
 			"get": {
 				"operationId": "PostsController.getPostById",
 				"parameters": [
@@ -436,6 +302,140 @@
 				"summary": "Update post",
 				"tags": [
 					"Posts"
+				]
+			}
+		},
+		"/api/v1/comments": {
+			"post": {
+				"operationId": "CommentsController.addComment",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CommentInput"
+							}
+						}
+					},
+					"description": "",
+					"required": false
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"status": {
+											"type": "string",
+											"example": "200"
+										},
+										"data": {
+											"type": "object",
+											"$ref": "#/components/schemas/Comment"
+										}
+									}
+								}
+							}
+						},
+						"description": "Successful response"
+					}
+				},
+				"summary": "Add comment",
+				"tags": [
+					"Comments"
+				]
+			}
+		},
+		"/api/v1/comments/{commentId}": {
+			"delete": {
+				"operationId": "CommentsController.deleteComment",
+				"parameters": [
+					{
+						"in": "path",
+						"name": "commentId",
+						"required": true,
+						"schema": {
+							"pattern": "[^\\/#\\?]+?",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"status": {
+											"type": "number",
+											"example": 200
+										},
+										"data": {
+											"type": "string",
+											"example": "fb26a1a5-8a51-4518-a56e-1e38540379d6"
+										}
+									}
+								}
+							}
+						},
+						"description": "Successful response"
+					}
+				},
+				"summary": "Delete comment",
+				"tags": [
+					"Comments"
+				]
+			},
+			"put": {
+				"operationId": "CommentsController.updateComment",
+				"parameters": [
+					{
+						"in": "path",
+						"name": "commentId",
+						"required": true,
+						"schema": {
+							"pattern": "[^\\/#\\?]+?",
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CommentInput"
+							}
+						}
+					},
+					"description": "",
+					"required": false
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"status": {
+											"type": "number",
+											"example": 200
+										},
+										"data": {
+											"type": "object",
+											"$ref": "#/components/schemas/Comment"
+										}
+									}
+								}
+							}
+						},
+						"description": "Successful response"
+					}
+				},
+				"summary": "Update comment",
+				"tags": [
+					"Comments"
 				]
 			}
 		}
