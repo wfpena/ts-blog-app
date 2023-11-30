@@ -12,6 +12,12 @@ The database used is **an in memory `postgres` instance. Meaning it is not persi
 
 This project uses `yarn` originally as package manager.
 
+## Openapi / Swagger
+
+For the backend, if the `SWAGGER_ENABLED` environment variable is set to `true`, then the swagger docs are served on the `/api-docs` endpoint.
+
+Example `http://localhost:3001/api-docs`
+
 ## Running Locally
 
 First run the backend project then frontend.
@@ -32,6 +38,8 @@ yarn install
 | PORT | Port which the server will run | Any port number
 | DB_TYPE | Database used | Currently only `postgres` allowed
 | RUN_SEED_ON_START | Auto populate `Posts` and `Comments` with random values on startup | `true` or `false` (`false` by default)
+| SWAGGER_ENABLED | If `true` server Swagger docs on `/api-docs` endpoint | `true` or `false` (`false` by default)
+
 
 3. Run the server:
 
@@ -96,6 +104,7 @@ For both frontend and backed run `yarn test`.
 
 ## TODO
 
+* Pagination / Infinite scrolling when fetching posts
 * Unit tests
 * Improve styles
 * Code refactoring (specially frontend)

@@ -36,7 +36,7 @@ export default class CommentsController {
 	}
 
 	@Delete('/:commentId')
-	async deletePost(@Param('commentId') commentId: string) {
+	async deleteComment(@Param('commentId') commentId: string) {
 		try {
 			await this._commentsService.deleteComment(commentId);
 			return {
@@ -50,7 +50,7 @@ export default class CommentsController {
 	}
 
 	@Put('/:commentId')
-	async updatePost(@Param('commentId') commentId: string, @Body() comment: Partial<CommentModelDto>) {
+	async updateComment(@Param('commentId') commentId: string, @Body() comment: Partial<CommentModelDto>) {
 		try {
 			const result = await this._commentsService.updateComment(commentId, comment);
 			return {
