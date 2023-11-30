@@ -36,7 +36,7 @@ a {
 	padding: 5px;
 	cursor: pointer;
 	&:hover {
-		opacity: 0.7;
+		opacity: 0.95;
 	}
 }
 
@@ -82,6 +82,7 @@ a {
 .blog-delete-post-button {
 	float: right;
 	&:hover {
-		color: red;
+		color: #d31a1a;
+		opacity: 1;
 	}
 }

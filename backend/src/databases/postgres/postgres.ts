@@ -4,6 +4,7 @@ import { Database } from '../database_abstract';
 import { newDb, IMemoryDb, QueryResult } from 'pg-mem';
 import { v4 as uuid4 } from 'uuid';
 import { loadData } from '../../../scripts/base-data';
+import { Environment } from '../../environment';
 
 export class PostgreStrategy extends Database {
 	_instance: IMemoryDb;
@@ -38,7 +39,7 @@ export class PostgreStrategy extends Database {
 			);
 		`);
 
-		if (false) {
+		if (Environment.run_seeds_on_startup === true) {
 			await loadData(db);
 		}
 

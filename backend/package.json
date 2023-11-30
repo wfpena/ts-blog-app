@@ -3,7 +3,8 @@
 		"build": "tsc --build",
 		"start": "ts-node ./src",
 		"start:watch": "ts-node-dev ./src",
-		"format": "prettier -w 'src/**/*.ts'"
+		"format": "prettier -w 'src/**/*.ts'",
+		"test": "mocha"
 	},
 	"dependencies": {
 		"class-transformer": "^0.4.0",

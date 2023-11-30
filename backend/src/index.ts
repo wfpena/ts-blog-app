@@ -21,13 +21,6 @@ if (!Environment.db_type) {
 
 DatabaseInstanceStrategy.setInstanceByEnv(Environment.db_type);
 
-//app.use(cors())
-//app.use((req: any, res: any, next: any) => {
-//	res.header("Access-Control-Allow-Origin", "*");
-//	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//	next();
-//});
-
 const server = app.listen(Environment.port, () => {
 	console.log(`Running at http://localhost:${Environment.port}`);
 });

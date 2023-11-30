@@ -1,4 +1,4 @@
-import { Trash3 } from 'react-bootstrap-icons';
+import { Trash3Fill } from 'react-bootstrap-icons';
 import { Post as PostModel } from '../../models/post';
 import { getContentSubstring } from '../../utils/helpers';
 
@@ -20,7 +20,7 @@ function PostPanel({
 					}}
 					className='blog-delete-post-button'
 				>
-					<Trash3></Trash3>
+					<Trash3Fill></Trash3Fill>
 				</div>
 			</div>
 			<div className='blog-post-content'>{getContentSubstring(post.content)}</div>
